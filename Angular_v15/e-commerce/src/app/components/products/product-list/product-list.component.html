@@ -1,0 +1,8 @@
+<div class="products_wraper">
+    <app-skeleton-loader *ngIf="!products.length" [counts]="12"></app-skeleton-loader>
+    <div class="row">
+        <div class="col_25" *ngFor="let product of products" [routerLink]="['/products/product-details', product.id]">
+            <app-product-card [product]="product"></app-product-card>
+        </div>
+    </div>
+</div>

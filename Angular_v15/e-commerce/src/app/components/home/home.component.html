@@ -1,0 +1,36 @@
+<div class="product_card_wraper">
+  <h2 class="main_heading">Men Clothing</h2>
+  <app-skeleton-loader *ngIf="!menClothingProducts.length" [counts]="4"></app-skeleton-loader>
+  <div class="row">
+    <div class="col_25" *ngFor="let product of menClothingProducts" [routerLink]="['/products/product-details', product.id]">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+</div>
+<div class="product_card_wraper">
+  <h2 class="main_heading">Women Clothing</h2>
+  <app-skeleton-loader *ngIf="!womenClothingProducts.length" [counts]="4"></app-skeleton-loader>
+  <div class="row">
+    <div class="col_25" *ngFor="let product of womenClothingProducts" [routerLink]="['/products/product-details', product.id]">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+</div>
+<div class="product_card_wraper">
+  <h2 class="main_heading">Jewelery</h2>
+  <app-skeleton-loader *ngIf="!jeweleryProducts.length" [counts]="4"></app-skeleton-loader>
+  <div class="row">
+    <div class="col_25" *ngFor="let product of jeweleryProducts" [routerLink]="['/products/product-details', product.id]">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+</div>
+<div class="product_card_wraper">
+  <h2 class="main_heading">Electronics</h2>
+  <app-skeleton-loader *ngIf="!electronicsProducts.length" [counts]="4"></app-skeleton-loader>
+  <div class="row">
+    <div class="col_25" *ngFor="let product of electronicsProducts" [routerLink]="['/products/product-details', product.id]">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+</div>

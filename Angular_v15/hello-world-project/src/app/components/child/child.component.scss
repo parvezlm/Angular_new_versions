@@ -1,0 +1,12 @@
+.user_status {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    &.active {
+        background-color: green;
+    }
+    &.not_active {
+        background-color: red;
+    }
+}

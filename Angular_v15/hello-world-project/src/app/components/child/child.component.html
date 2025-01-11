@@ -1,0 +1,16 @@
+<!-- <p *ngIf="isUserLoggedIn">User active now</p> -->
+@if(isUserLoggedIn) {
+<p>User active now <span class="user_status active"></span></p>
+<span></span>
+} @else {
+<p>User not active <span class="user_status not_active"></span></p>
+}
+
+<ul>
+  <!-- <li *ngFor="let user of name()">{{user.title}}</li> -->
+  @for (user of name(); track user) {
+  <li>{{ user.title }}</li>
+  }
+</ul>
+
+<button type="button" (click)="updateName()" class="btn">Update</button>

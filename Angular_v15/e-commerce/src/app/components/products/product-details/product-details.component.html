@@ -1,0 +1,14 @@
+<div class="product-details">
+  <img src="assets/images/loader.gif" *ngIf="!productInfo" alt="loader">
+  <div class="row" *ngIf="productInfo">
+    <div class="product-image col_25">
+      <img src="{{ productInfo?.image }}" alt="{{ productInfo?.title }}" />
+    </div>
+    <div class="product-info col_75">
+      <h2>{{ productInfo?.title | textSlice}}</h2>
+      <p class="category">Category: {{ productInfo?.category }}</p>
+      <p class="price">Price: {{ productInfo?.price | currency : "USD" : "symbol" : "1.0-0" }}</p>
+      <p class="description"><strong>Description</strong>: {{ productInfo?.description }}</p>
+    </div>
+  </div>
+</div>

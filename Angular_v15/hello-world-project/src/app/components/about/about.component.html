@@ -1,0 +1,52 @@
+<section class="main">
+    <div class="container">
+        <div>
+            <h2 class="main_heading">Content load on button click</h2>
+            <!-- content load when button click -->
+            @defer (on interaction(trigger)) {
+                <p>about works!</p>
+            } @placeholder {
+            <p> Please click on button!!</p>
+            }
+            <button type="button" class="btn btn_primary" #trigger>Click</button>
+        </div>
+        <div class="mt-20">
+            <!-- content load on hover -->
+            <h2 class="main_heading">Content load on hover</h2>
+            <p #hover>Please hover on me!!</p>
+            @defer (on hover(hover)) {
+                <p>i am available 👨‍🚒</p>
+            }
+        </div>
+        <div class="mt-20">
+            <!-- when the element enters the viewport -->
+            <h2 class="main_heading">Content load when element enters the viewport</h2>
+            <p #enter style="display: none;">click on me!!</p>
+            <button type="button" (click)="clickonme()" class="btn">Click</button>
+            @defer (on viewport(enter)) {
+                <p>i am available 👨‍🚒</p>
+            }
+        </div>
+        <div class="mt-20">
+           <!-- load content after a specific timeout -->
+           <h2 class="main_heading">Load content after a specific timeout</h2>
+           @defer (on timer(3000)) {
+               <p>I am also there 👮‍♀️</p>
+           }
+        </div>
+        <div class="mt-20">
+            <!-- load content on a custom condition -->
+            <h2 class="main_heading">Load content on a custom condition</h2>
+            @defer (when load === true) {
+                <p>I am also there 👮‍♀️</p>
+            }
+            <button type="button" class="btn btn_primary" (click)="loadContentDeferably()">Click</button>
+         </div>
+    </div>
+    <select #item (change)="onSelect($event)">
+        <option value="dd">item 1</option>
+        <option value="rr">item 2</option>
+        <option value="rr">item 3</option>
+        <option value="gg">item 4</option>
+    </select>
+</section>
